@@ -24,6 +24,27 @@ class FamilyTree:
         while founder_b.gender == founder_a.gender:
             founder_b = self.factory.create_person(1950)
 
+        founder_a.set_partner(founder_b) # ---> # This line links the two founders as partners.
+# This ensures that children are correctly associated with both parents
+# and allows the ASCII tree to visually represent a proper parental pair.
+#
+# Side Effect:
+# Because both parents reference the same children, traversing the tree
+# starting from each founder can cause the same descendants to appear twice
+# in printed output. This does NOT mean the children are actually duplicated
+# Person objects — it is a traversal/printing issue caused by shared references.
+#
+# It can also inflate duplicate-name counts if the same subtree is printed
+# from both roots without tracking visited nodes.
+#
+# Therefore:
+# - This partner link is necessary for correct family modeling and visualization.
+# - Duplicate printing/counting must be handled separately (e.g., using a
+#   visited set when printing or de-duplicating by object id when counting).
+#discovered via trial and error of count seeming off in option 3 of main (with this line on) 
+# or tree being off (option 7) via not representing both parents (with this line deleted). Realized 
+# have to leave this line and account for not counting duplicates in main.py :)
+
         # 2) adding both founders to the master list
         self.people.append(founder_a)
         self.people.append(founder_b)
