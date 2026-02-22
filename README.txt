@@ -1,8 +1,17 @@
-This program generates a random family tree from the year 1950 with statistically representative 
-data on first/last names, marriage rates, birthrate, and lifespan.
+Family Tree Generator
+Overview
+
+This program generates a simulated multi-generation family tree beginning in 1950 using statistically representative demographic data.
+
+The model incorporates: First name frequencies by decade and gender, Last name probability distributions, Marriage rates by decade, Birth rates by decade, and
+
+Life expectancy by decade. All demographic data is read from CSV files and processed at runtime.
+
+Each generated person is probabilistically constructed based on historical trends, allowing the tree to grow across generations while remaining statistically grounded.
+
 
 *Note: There are many comments/annotations in my code because this was a process of learning.
-notes show my learning thought process and are not a reflection of the amount I comment professioanlly.
+Notes show my thought processes and are not a reflection of the amount I normally comment.
 _____________________
 
 person.py is the person class: creates a person
