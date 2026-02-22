@@ -77,8 +77,9 @@ def main():
 #unique people logic using IDs... necessary due to line 27 OF FAMILY_TREE.PY
         unique_people = {}
         for p in tree.people:
-            unique_people[id(p)] = p
-        unique_people_list = list(unique_people.values())
+            unique_people[p.person_id] = p
+        unique_people_list = list(unique_people.values()) #person objects stores in list
+        #print("debug: " + str(unique_people.values()))
 
 #total num of people:
         if choice == "1":

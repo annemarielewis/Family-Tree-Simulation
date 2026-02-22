@@ -21,7 +21,7 @@
 class Person:
 
 #constructor
-    def __init__(self, year_born, year_died, first_name, last_name, gender):
+    def __init__(self, year_born, year_died, first_name, last_name, gender, person_id):
         self.year_born = year_born
         self.year_died = year_died
         self.first_name = first_name
@@ -29,6 +29,7 @@ class Person:
         self.partner = None  #default       
         self.children = []    #empty rn
         self.gender=gender
+        self.person_id=person_id
 
 #methods
     #name:

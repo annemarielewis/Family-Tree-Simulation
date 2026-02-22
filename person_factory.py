@@ -11,8 +11,9 @@ class PersonFactory:
     def __init__(self): #CONSTRUCTOR SYNTAX
         #(self means “this specific instance of the class”)
 
-        # dictionaries:
-        self.life_expectancy_by_decade = {} #DONE
+        self.next_id = 1   # ID counter
+
+        self.life_expectancy_by_decade = {} 
         self.birth_rate_by_decade = {}
         self.marriage_rate_by_decade = {}
         self.last_name_ranks = []
@@ -21,7 +22,7 @@ class PersonFactory:
         # weighted sampling lists/dicts
         # first names nested dictionary:
         # { decade: { gender: { name: frequency } } }
-        self.first_names = {} #DONE
+        self.first_names = {} 
         self.last_names = []
         self.last_name_weights = []
 
@@ -225,5 +226,9 @@ class PersonFactory:
 
         year_died = int(year_born + life_length)
 
+        person_id=self.next_id
+
+        self.next_id += 1
+        
         # 6️return a Person object
-        return Person(year_born, year_died, first_name, last_name, gender)
+        return Person(year_born, year_died, first_name, last_name, gender, person_id)
